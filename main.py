@@ -47,14 +47,6 @@ def extrapolate(df):
 
     total_years_lived = np.cumsum(years_lived[::-1])[::-1]
     df['ex_calc'] = total_years_lived / df['lx'].values
-
-    """
-    ***NOTES***
-    - We have that ex = total_years_lived/lx, where total_years_lived is the total number of years lived from age x, lx is number of people still alive at age x per 100,000 live births
-    - So we need to find all of the Txs for the indexes where we don't have an ex, ie. from 101 onwards
-    - Each total_years_lived = (lx + l(x+1))/2
-    """
-
     return df
 
 def annuity_value(a, i, df):
