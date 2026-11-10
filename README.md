@@ -20,12 +20,12 @@ Annuity cost is: £1,037,777.62
     Scatter plot showing log-linear relationship between mx and age for females over 60
   </summary>
   
-  ![](FemaleMortality.png?raw=True)
+  ![](FemaleMortalityPlot.png?raw=True)
 </details>
 <details>
   <summary>
     Scatter plot showing log-linear relationship between mx and age for males over 60
   </summary>
   
-  ![](MaleMortality.png?raw=True)
+  ![](MaleMortalityPlot.png?raw=True)
 </details>
