@@ -12,7 +12,7 @@ For completeness, I also then generated values for life expectancy at each age, 
 
 View example data for a 60 year old female wanting £10,000 per year at 4% interest and 3% inflation [here](ExampleDataF.csv) (the total cost of this annuity is £1058879.62).
 
-Annuity cost is: £1037777.62
+Annuity cost is: £1,037,777.62
 
 **DATA VISUALISATIONS**
 <details>
