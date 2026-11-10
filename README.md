@@ -10,7 +10,22 @@ This allowed me to find polynomial coefficients of the line of best fit, and the
 I could then use the methods described by ONS to generate extrapolated data for ages above 100, relying on my value of mx.
 For completeness, I also then generated values for life expectancy at each age, since this could not be done using solely the mx, and compared it to my data.
 
-**DATA AND VISUALISATIONS**
+View example data for a 60 year old female wanting £10,000 per year at 4% interest and 3% inflation [here](ExampleDataF.csv) (the total cost of this annuity is £1058879.62).
+
+Annuity cost is: £1037777.62
+
+**DATA VISUALISATIONS**
 <details>
+  <summary>
+    Scatter plot showing log-linear relationship between mx and age for females over 60
+  </summary>
   
+  ![](FemaleMortality.png?raw=True)
+</details>
+<details>
+  <summary>
+    Scatter plot showing log-linear relationship between mx and age for males over 60
+  </summary>
+  
+  ![](MaleMortality.png?raw=True)
 </details>
