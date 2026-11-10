@@ -1,12 +1,6 @@
 import pandas as pd
 import numpy as np
 
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-pd.set_option('display.width', None)
-pd.options.display.float_format = '{:.7f}'.format
-pd.options.display.float_format = lambda x: f'{x:.7f}'.rstrip('0').rstrip('.')
-
 def read_excel_file(cols) -> pd.DataFrame:
     #First reducing the sheet to only the relevant data for the query was the simplest way to begin.
     return pd.read_excel(
@@ -52,7 +46,7 @@ def extrapolate(df):
 def annuity_value(a, i, df):
     #Generating the probability of someone living until the cutoff calculated in the sheet and adding to the dataframe
     df['px'] = df.loc[a:, 'lx'] / df['lx'].iloc[a]
-    df['px'] = df['px'].fillna(0)
+    df['px'] = df['px'].fillna(1.0)
 
     #Generating another column, which will be the annuity per year
     df['expected_payment'] = df['px'] * pow(1 / (1 + i), df['age'] - a)
@@ -69,9 +63,10 @@ if __name__ == '__main__':
     age = int(input("Enter age: "))
     annual_payment = float(input("Enter annual payment: £"))
     interest = float(input("Enter interest rate(%): "))/100
-    inflation = float(input("Enter inflation(%): ")) / 100
+    inflation = float(input("Enter inflation of payments(%): ")) / 100
 
-    dataframe, annuity_price = annuity_value(age, (interest - inflation) / (1 - inflation), dataframe)
-    print(f"Annuity price is: £{annuity_price*annual_payment:.2f}")
+    dataframe, annuity_cost = annuity_value(age, (interest - inflation) / (1 - inflation), dataframe)
+
+    print(f"Annuity cost is: £{annuity_cost * annual_payment:.2f}")
     input()
     print(dataframe)
