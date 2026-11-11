@@ -46,9 +46,9 @@ def extrapolate(df):
 def annuity_value(a, i, df):
     #Generating the probability of someone living until the cutoff calculated in the sheet and adding to the dataframe
     df['px'] = df.loc[a:, 'lx'] / df['lx'].iloc[a]
-    df['px'] = df['px'].fillna(1.0)
+    df['px'] = df['px'].fillna(0)
 
-    #Generating another column, which will be the annuity per year
+    #Generating another column, which will be the expected payment per year
     df['expected_payment'] = df['px'] * pow(1 / (1 + i), df['age'] - a)
 
     #Calculating total annuity
@@ -66,7 +66,7 @@ if __name__ == '__main__':
     inflation = float(input("Enter inflation of payments(%): ")) / 100
 
     dataframe, annuity_cost = annuity_value(age, (interest - inflation) / (1 - inflation), dataframe)
-
+    dataframe.loc[:age-1, 'px'] = 1
     print(f"Annuity cost is: £{annuity_cost * annual_payment:.2f}")
     input()
     print(dataframe)
