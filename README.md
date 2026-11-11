@@ -10,9 +10,8 @@ This allowed me to find polynomial coefficients of the line of best fit, and the
 I could then use the methods described by ONS to generate extrapolated data for ages above 100, relying on my value of mx.
 For completeness, I also then generated values for life expectancy at each age, since this could not be done using solely the mx, and compared it to my data.
 
-View example data for a 60 year old female wanting £10,000 per year at 4% interest and 3% inflation [here](ExampleDataF.csv) (the total cost of this annuity is £1058879.62).
+View example data for a 60 year old female wanting £10,000 per year at 4% interest and 3% inflation based on the data from 2022-2024 [here](ExampleDataF.csv) (the total cost of this annuity is £225,509.05).
 
-Annuity cost is: £1,037,777.62
 
 **DATA VISUALISATIONS**
 <details>
